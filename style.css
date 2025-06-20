@@ -738,3 +738,111 @@ footer {
   border-radius: 18px 18px 0 0;
   box-shadow: 0 -2px 12px rgba(0,77,64,0.08);
 }
+
+/* Articles & événements */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+  min-height: 420px;
+}
+.article-card {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  transition: opacity 0.8s;
+}
+.article-card.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+  padding: 0 0 24px 0;
+  margin: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+}
+
+.article-card {
+  background: #23272b !important;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,77,64,0.10);
+  padding: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,77,64,0.16);
+}
+
+.article-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.article-card h3 {
+  color: var(--accent-color);
+  font-size: 1.18rem;
+  margin: 18px 0 8px 0;
+  text-align: center;
+}
+
+.article-card p {
+  color: #f5f5f5;
+  font-size: 1.02em;
+  margin: 0 16px 14px 16px;
+  text-align: center;
+}
+
+.facebook-link {
+  margin: 24px 0 18px 0;
+  text-align: center;
+}
+
+.facebook-link a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.facebook-link a:hover {
+  color: var(--accent-color-hover);
+}
+
+.facebook-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+/* Facebook widget responsive */
+.fb-page {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
